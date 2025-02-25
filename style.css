@@ -1,0 +1,181 @@
+.logo{  /* apunta al elemento html que tienen la clase logo*/
+    margin-left: 0%; /*margen izquierdo del elemento con la clase 0% no habrá margen izquierdo.*/
+    width: 5%; /*Establece el ancho del elemento*/
+}
+
+.logo img{
+    width: 100px;
+}
+
+h1{  /*apunta a todos los elementos "h1" en el documento.*/
+    font-family:'Times New Roman', Times, serif; /*Establece la familia de fuentes para los elementos <h1>*/
+    margin-top: 90px;
+}
+body {  /*Es para al elemento <body> de la página.*/
+    font-family: Arial, sans-serif;  /*Establece la familia de fuentes para cualquier elemento que se encuentre en "body"*/
+    margin: 0;  /*Establece el margen exterior del cuerpo del documento en 0, lo que elimina cualquier margen alrededor del cuerpo.*/
+    padding: 0;  /* Establece el relleno interior del cuerpo del documento en 0, eliminando cualquier relleno alrededor del contenido del cuerpo.*/
+}
+
+header {  /*Ubica al elemento html "header" en el documento*/
+    background-color: #553f2b;  /*Establece el color de fondo del elemento*/
+    color: #fff;  /*Establece el color del texto */
+    text-align: center; /*Centra el contenido*/
+}
+
+nav ul {  /*Ubica la lista desordenada (ul) */
+    margin-top: -200px;  /*Establece un margen superior negativo de -200px para mover la lista hacia arriba 200 píxeles.*/
+    list-style-type: none; /*Elimina los marcadores de lista como viñetas*/
+    padding: 0;  /*Elimina cualquier relleno interior de la lista */
+}
+
+nav ul li {  /*busca los elementos de lista (li) que se encuentran dentro de listas desordenadas (ul) dentro de elementos de navegación (nav).*/
+    display: inline; /*permite que los elementos de la lista se muestren horizontalmente.*/
+    margin-right: 50px;   /* Establece un margen derecho de 50px entre cada elemento de lista, lo que crea espacio entre ellos */
+}
+
+nav ul li a { /*busca los enlaces (a) que se encuentran dentro de una lista (li) que están dentro de listas desordenadas (ul) dentro de la etiqueta <nav>.*/
+    color: #fff; /* Establece el color del texto de los enlaces (a) a blanco.*/
+    text-decoration: none; /* Elimina lo subrayado de los enlaces*/
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.block {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.295);
+}
+
+footer {
+    background-color: #504132; /* Establece el color de fondo*/
+    color: #fff;  /*Establece el color del texto*/
+    text-align: center;  /*Centra el contenido*/
+    padding: 10px ;  /*Establece un relleno de 10 píxeles en la parte superior e inferior del elemento */
+    /*position: fixed;  /*El elemento footer permanecerá fijo en la parte inferior*/
+    bottom: 0;  /* Coloca el elemento footer en la parte inferior*/
+    width: 100%;  /*que el pie de página ocupe todo el ancho de la ventana*/
+    
+}
+footer a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#home {  /*encuentra el identificador (id) con el nombre Home*/
+    background-color: #ffffff;  /*Establece el color de fondo*/
+    padding: 50px;  /*Establece un relleno interior de 50 píxeles*/
+}
+
+
+
+
+
+#galeria {  /*encuentra el identificador (id) con el nombre galeria*/
+    background-color: #ffffff;   /*Establece el color de fondo*/
+    padding: 20px;  /*Establece un relleno interior de 20 píxeles*/
+    text-align: center;  /*Centra el contenido*/
+}
+
+.imagen {  /*encuentra la clasela clase "imagen"*/
+    display: inline-block; /*cambia los elementos para que quede con las propiedades de un bloque*/
+    margin: 10px;  /*Establece un margen de 10 píxeles */
+}
+
+.imagen img {  /*busca imágenes (img) que se encuentran en la clase "imagen"*/
+    width: 250px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.imagen p {  /*busca parrafos (p) que se encuentran en la clase "imagen"*/
+    margin-top: 5px;  /* Establece un margen superior de 5 píxeles para los párrafos*/
+    font-size: 14px;  /* Establece el tamaño de fuente de los párrafos*/
+}
+
+
+
+
+
+/*Menú*/
+.menu-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 10%;
+}
+.menu-table th, .menu-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+.menu-table th {
+    background-color: #553f2b;
+    color: #ffffff;
+}
+.menu-table img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+
+/*Formulario*/
+
+.form-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+    width: 70%;
+    margin-left: 15%;
+}
+
+.form-container h2 {
+    margin-bottom: 40px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="number"],
+.form-container select,
+.form-container textarea {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.form-container button {
+    padding: 10px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}

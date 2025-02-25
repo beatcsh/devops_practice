@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  background-color: #4f3925;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav.active {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active a {
+  color: #000;
+}
+
+.nav.active .container {
+  padding: 10px 0;
+}
+
+.nav a.current,
+.nav a:hover {
+  color: #000000;
+  font-weight: bold;
+}
+
+.hero {
+  background-image: url('https://resizer.glanacion.com/resizer/v2/en-la-ambientacion-trabajaron-artesanos-CLVTOAXF4ZBIPLIGKCAE3FVZEE.JPG?auth=14fd4f2808249653b398e9a075e5651efdc121314e08afb0a4b7906b46ba62ed&width=1920&height=1280&quality=70&smart=true');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: -2;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin: -20px 0 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.content h2,
+.content h3 {
+  font-size: 150%;
+  margin: 20px 0;
+}
+
+.content p {
+  color: #555;
+  line-height: 30px;
+  letter-spacing: 1.2px;
+}
+
+/*Formulario*/
+
+.form-container {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+  width: 70%;
+  margin-left: 15%;
+}
+
+.form-container h2 {
+  margin-bottom: 40px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="number"],
+.form-container select,
+.form-container textarea {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.form-container button {
+  padding: 10px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
+/*Galería*/
+
+#galeria {  /*encuentra el identificador (id) con el nombre galeria*/
+  background-color: #ffffff;   /*Establece el color de fondo*/
+  padding: 20px;  /*Establece un relleno interior de 20 píxeles*/
+  text-align: center;  /*Centra el contenido*/
+ 
+}
+
+.imagen {  /*encuentra la clasela clase "imagen"*/
+  display: inline-block; /*cambia los elementos para que quede con las propiedades de un bloque*/
+  margin: 10px;  /*Establece un margen de 10 píxeles */
+}
+
+.imagen img {  /*busca imágenes (img) que se encuentran en la clase "imagen"*/
+ 
+ width: 250px; /* Ajusta el ancho de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */}
+
+.imagen p {  /*busca parrafos (p) que se encuentran en la clase "imagen"*/
+  margin-top: 5px;  /* Establece un margen superior de 5 píxeles para los párrafos*/
+  font-size: 14px;  /* Establece el tamaño de fuente de los párrafos*/
+}
+
+/*Menú*/
+.menu-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+  margin-left: 10%;
+}
+.menu-table th, .menu-table td {
+  border: 1px solid #000000;
+  padding: 8px;
+}
+.menu-table th {
+  background-color: #553f2b;
+  color: #ffffff;
+}
+.menu-table img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/*footer*/
+footer {
+  background-color: #504132; /* Establece el color de fondo*/
+  color: #fff;  /*Establece el color del texto*/
+  text-align: center;  /*Centra el contenido*/
+  padding: 10px ;  /*Establece un relleno de 10 píxeles en la parte superior e inferior del elemento */
+  /*position: fixed;  /*El elemento footer permanecerá fijo en la parte inferior*/
+  bottom: 0;  /* Coloca el elemento footer en la parte inferior*/
+  width: 100%;  /*que el pie de página ocupe todo el ancho de la ventana*/
+  
+}
+footer a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
