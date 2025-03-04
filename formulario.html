@@ -4,93 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuentanos tu experiencia</title>
-    <link rel="icon" href="/img/logo2-negro.png" type="image/png"> <!--cambiar la imagen que se muestra en la pestaña del navegador-->
-    <link rel="stylesheet" href="stylehome.css"> <!--Vincula la hoja de estilo para agregar estilos a la pagina-->
+    <link rel="icon" href="/img/logo2-negro.png" type="image/png">
+    <link rel="stylesheet" href="stylehome.css">
 </head>
 <body>
-    <header>   <!--Marca el inicio del encabezdo, sección de la página web que contiene información -->
+    <header>
         <nav class="nav">
             <div class="container">
                 <img src="img/logo2-negro.png" width="70px" height="50px"> 
-              <h1 class="logo"><a href="/index.html">Espresso Patronum</a></h1>
-              <ul>
-                <li><a href="/index.html" class="current">Home</a></li>
-                <li><a href="/galeria.html">Galeria</a></li>
-                <li><a href="/menu.html">Menú</a></li>
-                
-                <li><a href="/formulario.html">Cuentanos tu experiencia</a></li>
-                 
-              </ul>
+                <h1 class="logo"><a href="/index.html">Espresso Patronum</a></h1>
+                <ul>
+                    <li><a href="/index.html" class="current">Home</a></li>
+                    <li><a href="/galeria.html">Galeria</a></li>
+                    <li><a href="/menu.html">Menú</a></li>
+                    <li><a href="/formulario.html">Cuentanos tu experiencia</a></li>
+                </ul>
             </div>
-          </nav>
-    </header>    <!--Marca el fin de la etiqueta de encabezado-->
+        </nav>
+    </header>
 
-<br>
-<br><br>
-<br<br>
-    <section id="experiencia"><!--Marca el inicio de la seccion con un identificador -->
-        <div class="form-container"><!--Se crea una clase para agregar estilos especificos al formulario-->
-            <center><h2>Cuéntanos tu experiencia</h2></center><!--Se centra el titulo-->
-            <form id="formulario" action="https://formsubmit.co/js3793702@gmail.com" method="POST"> <!--Marca el inicio del formulario con un identificador-->
-                <!-- Campo de entrada para el nombre -->
+    <br><br><br><br>
+    <section id="experiencia">
+        <div class="form-container">
+            <center><h2>Cuéntanos tu experiencia</h2></center>
+            <form id="formulario">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
                 
-                 <!-- Campo de entrada para el correo electrónico -->
                 <label for="correo">Correo electrónico:</label>
-                <input type="email" id="correo" name="correo" required>
+                <input type="email" id="correoElectronico" name="correoElectronico" required>
                 
-                <!-- Campo de entrada para el teléfono -->
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" name="telefono">
                 
-                 <!-- Campo de entrada para la edad -->
                 <label for="edad">Edad:</label>
                 <input type="number" id="edad" name="edad">
                 
-                 <!-- Menú desplegable para seleccionar el género -->
                 <label for="genero">Género:</label>
-                <select id="genero" name="genero"> <!--Se agrega una etiqueta select a este campo-->
-                    <option value="masculino">Masculino</option><!--Se agrega una opcion-->
-                    <option value="femenino">Femenino</option><!--Se agrega una opcion-->
-                    <option value="otro">Otro</option><!--Se agrega una opcion-->
-                </select><!--Marca el fin de la etiqueta select-->
+                <select id="genero" name="genero">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
     
-                 <!-- Área de texto para ingresar la experiencia -->
                 <label for="experiencia">Experiencia:</label>
                 <textarea id="experiencia" name="experiencia" rows="4" required></textarea>
     
-                 <!-- Área de texto para ingresar sugerencias -->
                 <label for="sugerencias">Sugerencias:</label>
                 <textarea id="sugerencias" name="sugerencias" rows="4"></textarea>
     
-                <!-- Botón de envío del formulario -->
                 <button type="submit">Enviar</button>
-            </form><!--Marca el fin de el formulario-->
-        </div><!--Marca el fin de la clase form-container-->
-    </section><!--Marca el cierre de la sección-->
-        
-    <script> //Marca el inicio del script
-       // Función para mostrar la alerta al enviar el formulario
-        function mostrarAlerta() {
-            alert("¡Gracias por compartir tu experiencia con nosotros!");
-        }
+            </form>
+        </div>
+    </section>
 
-        // Obtener el formulario por su ID
-        var form = document.getElementById("formulario");
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const formObject = Object.fromEntries(formData.entries());
 
-        form.addEventListener("submit", function() {            
-            // Mostrar la alerta
-            mostrarAlerta();
-
+            fetch('http://localhost:4000/comments/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formObject)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.msg);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         });
-    </script><!--Cierre de la seccion de JavaScript-->
+    </script>
 
-
-    <footer>    <!--Marca el inicio del pie de pagina-->
-        <p>Contactanos:</p>  <!--Se utiliza la etiqueta para parrafo y se agrega la palabra "contactanos"-->
-        <p> <img src="/img/telefono.png" alt="imagen de telefono" width="25px"> <a href="https://wa.me/qr/YHPB5MTQDCZVL1">       Tel: 449 347 08 41 </a></p>  <!--Con la misma etiqueta se agrega un numero de telefono con el icono correspondiente con imagen-->
-        <p> <img src="/img/email.png" alt="imagen de email" width="25px">        Email:Espresso_P@gmail.com</p> <!--Con la misma etiqueta se agrega un email con el icono correspondiente con imagen-->
-    </footer>  <!--Marca el cierre del pie de pagina-->
+    <footer>
+        <p>Contactanos:</p>
+        <p> <img src="/img/telefono.png" alt="imagen de telefono" width="25px"> <a href="https://wa.me/qr/YHPB5MTQDCZVL1">       Tel: 449 347 08 41 </a></p>
+        <p> <img src="/img/email.png" alt="imagen de email" width="25px">        Email:Espresso_P@gmail.com</p>
+    </footer>
 </body>
 </html>

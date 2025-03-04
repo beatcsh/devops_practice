@@ -9,6 +9,11 @@ function fixNav() {
     }
 }
 
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+    document.querySelector(".nav-links").classList.toggle("nav-active");
+});
+
+
 
 const imgs = document.getElementById('imgs')
 const leftBtn = document.getElementById('left')
