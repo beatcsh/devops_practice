@@ -79,11 +79,7 @@
         // Obtener el formulario por su ID
         var form = document.getElementById("formulario");
 
-        // Agregar un "escuchador de eventos" para el evento submit (boton de enviar) del formulario
-        form.addEventListener("submit", function(event) {
-            // Prevenir el comportamiento predeterminado de enviar el formulario
-            event.preventDefault();
-            
+        form.addEventListener("submit", function() {            
             // Mostrar la alerta
             mostrarAlerta();
 
